@@ -70,4 +70,11 @@ export const incrementIfOdd = (amount) => (dispatch, getState) => {
   }
 };
 
+export const incrementIfEven = (amount) => (dispatch, getState) => {
+  const currentValue = selectCount(getState());
+  if (currentValue % 2 === 0) {
+    dispatch(incrementByAmount(amount));
+  }
+};
+
 export default counterSlice.reducer;
