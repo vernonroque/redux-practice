@@ -1,0 +1,12 @@
+.quoteContainer{
+    width:100%;
+    height:auto;
+    background:lightsalmon;
+    margin:20px 0;
+    padding:20px;
+}
+.header{
+    font-size:3rem;
+    font-family:Arial, Helvetica, sans-serif;
+    color:black;
+}

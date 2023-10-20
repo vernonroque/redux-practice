@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
+import {Quote} from './features/quoteFeature/Quote';
 import './App.css';
 
 function App() {
@@ -51,6 +52,10 @@ function App() {
           </a>
         </span>
       </header>
+      <section className ="quote-section">
+          <Quote/>
+      </section>
+     
     </div>
   );
 }
