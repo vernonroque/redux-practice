@@ -1,20 +1,35 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import styles from './Quote.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   changeToOne,
   changeToTwo,
   changeToThree,
-  selectQuote
+  getQuote,
+  selectQuote,
 } from './quoteSlice';
+//import {fetchQuote} from "./quoteAPI";
 
 export const Quote = (props) => {
   const quote = useSelector(selectQuote);
-  console.log(quote);
   
   const dispatch = useDispatch();
-  //const [changeQuote,setChangeQuote] = useState(quote.quote.getState());
-  console.log(dispatch(changeToOne));
+  //console.log(dispatch(changeToOne));
+
+  // const fetchData = async() => {
+  //   try {
+  //     const response = await fetchQuote();
+  //       console.log('Response inside useEffect', response);
+  //       } catch (error) {
+  //           console.log(error);
+  //       }
+  // }
+
+  // useEffect(()=>{
+
+  //   fetchData();
+
+  // },[quote])
     
   return (
     <div className = {styles.quoteContainer}>
@@ -31,6 +46,9 @@ export const Quote = (props) => {
       </button>
       <button onClick = {() => dispatch(changeToThree())}>
           button 3
+      </button>
+      <button onClick = {() => dispatch(getQuote())}>
+          get a random quote
       </button>
     </div>
   )
